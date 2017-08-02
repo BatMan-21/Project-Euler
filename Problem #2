@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+#define ll          long long
+#define pb          push_back
+#define mp          make_pair
+#define pii         pair<int,int>
+#define vi          vector<int>
+#define all(a)      (a).begin(),(a).end()
+#define sz(x)       (int)x.size()
+#define hell        1000000007
+#define lbnd        lower_bound
+#define ubnd        upper_bound
+#define bs          binary_search
+using namespace std;
+ll fib(ll n)
+{
+	ll ans=2;
+	ll a=0;
+	ll b=2;
+	ll c;
+	{
+		while(4*b+a<n)
+		{
+			c=b;
+			b=4*b+a;
+			a=c;
+			ans+=b;
+		}
+	}
+	return ans;
+}
+int main()
+{
+	int t;
+	ll n;
+	cin>>t;
+	// we can easily calculate that the even terms follow the relation a(n)=4*a(n-1)+a(n-2) . 
+	while(t--)
+	{
+		cin>>n;
+		cout<<fib(n)<<endl;
+	}
+}
