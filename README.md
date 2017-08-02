@@ -1,2 +1,2 @@
 # Project-Euler
-solutions of Project Euler problems.
+This repository contains solutions of project-euler problems on www.hackerrank.com .
