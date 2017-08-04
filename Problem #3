@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+#define ll          long long
+#define pb          push_back
+#define mp          make_pair
+#define pii         pair<int,int>
+#define vi          vector<int>
+#define all(a)      (a).begin(),(a).end()
+#define sz(x)       (int)x.size()
+#define hell        1000000007
+#define lbnd        lower_bound
+#define ubnd        upper_bound
+#define bs          binary_search
+using namespace std;
+int prime(ll k)
+{
+	for(ll i=2;i*i<=k;i++)
+	{
+		if(k%i==0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+int main()
+{
+	int t;
+	cin>>t;
+	ll ans=0;
+	ll n,cnt;
+	while(t--)
+	{
+		cin>>n;
+		for(ll i=1;i*i<=n;i++)
+		{
+			if(n%i==0)
+			{
+				if(prime(n/i)) //to check if n/i is prime or not.
+				ans=n/i;
+				else if(prime(i)) // to check if i is prime.
+				ans=i;
+			}
+		}
+		cout<<ans<<endl;
+	}
+}
