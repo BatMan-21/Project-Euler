@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+#define ll          long long
+#define pb          push_back
+#define mp          make_pair
+#define pii         pair<int,int>
+#define vi          vector<int>
+#define all(a)      (a).begin(),(a).end()
+#define sz(x)       (int)x.size()
+#define hell        1000000007
+#define lbnd        lower_bound
+#define ubnd        upper_bound
+#define bs          binary_search
+using namespace std;
+
+vi a;
+void sieve(int n)
+{
+	bool prime[n+1];
+    memset(prime, true, sizeof(prime));
+ 
+    for (int p=2; p<=n; p++)
+    {
+        // If prime[p] is not changed, then it is a prime
+        if (prime[p] == true)
+        {
+        	a.pb(p);
+            // Update all multiples of p
+            for (int i=p*2; i<=n; i += p)
+                prime[i] = false;
+        }
+    }
+ 
+}
+int main()
+{
+	int t,n;
+	cin>>t;
+	sieve(100000000); // use sieve to precalculate all primes upto 10^7.
+	while(t--)
+	{
+		cin>>n;
+		cout<<a[n-1]<<endl;
+		
+	}
+}
