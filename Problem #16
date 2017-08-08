@@ -1,0 +1,11 @@
+t=int(input())
+a=0
+while a<t:
+    n=int(input())
+    b=pow(2,n)
+    b=str(b)  #changing int to str, so as to access each digit easily.
+    ans=0
+    for i in range(len(b)):
+        ans=ans+ord(b[i])-ord('0')   #to add every digit in ans.
+    print(ans)
+    a=a+1
