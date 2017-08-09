@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#define ll          long long
+#define pb          push_back
+#define mp          make_pair
+#define pii         pair<int,int>
+#define vi          vector<int>
+#define all(a)      (a).begin(),(a).end()
+#define sz(x)       (int)x.size()
+#define hell        1000000007
+#define lbnd        lower_bound
+#define ubnd        upper_bound
+#define bs          binary_search
+using namespace std;
+int main()
+{
+	int t,n,k;
+	cin>>t;
+	string a;
+	ll ans,max;
+	while(t--)
+	{
+		cin>>n>>k;
+		cin>>a;
+		ans=1;
+		max=0;
+		for(int i=0;i+k<a.size();i++)
+		{
+			ans=1;
+			for(int j=i;j<i+k;j++)
+			{
+				ans=ans*(a[j]-'0');
+			}
+			if(ans>max)
+			max=ans;
+		}
+		cout<<max<<endl;
+	}
+}
